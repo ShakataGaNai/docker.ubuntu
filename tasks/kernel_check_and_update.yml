@@ -32,8 +32,7 @@
     - "linux-image-extra-{{ ansible_kernel }}"
     - linux-image-extra-virtual
   when: "ansible_distribution_version|version_compare('13.04', '=')
-      or ansible_distribution_version|version_compare('13.10', '=')
-      or install_kernel_extras"
+      or ansible_distribution_version|version_compare('13.10', '=')"
 
 # Fix for https://github.com/dotcloud/docker/issues/4568
 - name: Install cgroup-lite for Ubuntu 13.10
